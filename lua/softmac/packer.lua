@@ -54,4 +54,6 @@ return require('packer').startup(function(use)
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
+  use 'nvim-tree/nvim-web-devicons'
+  use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
 end)
