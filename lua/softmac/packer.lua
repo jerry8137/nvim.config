@@ -55,6 +55,13 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
   use 'nvim-tree/nvim-web-devicons'
+  -- tab
   use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
+  -- status bar
   use {'feline-nvim/feline.nvim'}
+  -- gitsign
+  use {
+  'lewis6991/gitsigns.nvim',
+  -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+  }
 end)
