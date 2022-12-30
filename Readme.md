@@ -4,9 +4,14 @@ Most of the content are from the primeagen's video. Great video!
 
 ## Install
 
+Open `packer.lua` using nvim:
 `nvim ~/.config/nvim/lua/softmac/packer.lua`
-`:so`
-`:PackerSync`
+
+Inside nvim:
+```
+:so
+:PackerSync
+```
 
 ## Configure Github Copilot
 
