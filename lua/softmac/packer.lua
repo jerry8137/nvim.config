@@ -58,7 +58,10 @@ return require('packer').startup(function(use)
   -- tab
   use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
   -- status bar
-  use {'feline-nvim/feline.nvim'}
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
   -- gitsign
   use {
   'lewis6991/gitsigns.nvim',
