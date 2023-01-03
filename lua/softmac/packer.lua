@@ -47,13 +47,6 @@ return require('packer').startup(function(use)
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   }
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
   use 'nvim-tree/nvim-web-devicons'
   -- tab
   use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
