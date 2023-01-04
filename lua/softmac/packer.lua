@@ -48,6 +48,14 @@ return require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
   use 'nvim-tree/nvim-web-devicons'
+  -- nvim tree
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
   -- tab
   use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
   -- status bar
