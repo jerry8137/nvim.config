@@ -1,6 +1,20 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
+-- special keymap for mac since Alt is not working
+vim.keymap.set("n", "≥", vim.cmd.BufferNext)
+vim.keymap.set("n", "≤", vim.cmd.BufferPrevious)
+vim.keymap.set("n", "ç", vim.cmd.BufferClose)
+map('n', '¡', '<Cmd>BufferGoto 1<CR>', opts)
+map('n', '™', '<Cmd>BufferGoto 2<CR>', opts)
+map('n', '£', '<Cmd>BufferGoto 3<CR>', opts)
+map('n', '¢', '<Cmd>BufferGoto 4<CR>', opts)
+map('n', '∞', '<Cmd>BufferGoto 5<CR>', opts)
+map('n', '§', '<Cmd>BufferGoto 6<CR>', opts)
+map('n', '¶', '<Cmd>BufferGoto 7<CR>', opts)
+map('n', '•', '<Cmd>BufferGoto 8<CR>', opts)
+map('n', 'ª', '<Cmd>BufferGoto 9<CR>', opts)
+map('n', 'º', '<Cmd>BufferLast<CR>', opts)
 -- Move to previous/next
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
