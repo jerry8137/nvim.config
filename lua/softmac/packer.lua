@@ -70,4 +70,6 @@ return require('packer').startup(function(use)
   }
   -- comment toggle
   use "terrortylor/nvim-comment"
+  -- vim be good (practicing vim cmd game)
+  use 'ThePrimeagen/vim-be-good'
 end)
