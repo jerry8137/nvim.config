@@ -72,4 +72,5 @@ return require('packer').startup(function(use)
   use "terrortylor/nvim-comment"
   -- vim be good (practicing vim cmd game)
   use 'ThePrimeagen/vim-be-good'
+  use "lukas-reineke/indent-blankline.nvim"
 end)
