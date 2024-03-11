@@ -70,4 +70,14 @@ return require('packer').startup(function(use)
   -- vim be good (practicing vim cmd game)
   use 'ThePrimeagen/vim-be-good'
   use "lukas-reineke/indent-blankline.nvim"
+  use({
+  "epwalsh/obsidian.nvim",
+  tag = "*",  -- recommended, use latest release instead of latest commit
+  requires = {
+    -- Required.
+    "nvim-lua/plenary.nvim",
+
+    -- see below for full list of optional dependencies 👇
+  },
+})
 end)
