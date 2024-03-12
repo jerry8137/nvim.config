@@ -14,4 +14,9 @@ require('mason-lspconfig').setup({
   },
 })
 
-require('lspconfig').clangd.setup({})
+require('lspconfig').clangd.setup({
+  cmd = {
+    'clangd',
+    '--offset-encoding=utf-16'
+  },
+})
