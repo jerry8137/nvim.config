@@ -26,3 +26,4 @@ require("obsidian").setup({
 })
 
 vim.keymap.set("n", "<leader>op", vim.cmd.ObsidianOpen);
+vim.keymap.set("n", "<leader>of", vim.cmd.ObsidianFollowLink);
