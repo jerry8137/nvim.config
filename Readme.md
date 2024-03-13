@@ -6,8 +6,7 @@ Most of the content are from the primeagen's video. Great video!
 
 ### Git clone
 
-Open `packer.lua` using nvim:
-`nvim ~/.config/nvim/lua/softmac/packer.lua`
+Clone this repo to `~/.config/nvim`
 
 ### Install Packer
 
@@ -16,8 +15,11 @@ Open `packer.lua` using nvim:
 
 ### PackerSync
 
+Open `packer.lua` using nvim:
+`nvim ~/.config/nvim/lua/softmac/packer.lua`
+
 Inside nvim:
-```
+```vim
 :so
 :PackerSync
 ```
