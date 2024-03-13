@@ -21,3 +21,5 @@ require("obsidian").setup({
 
 vim.keymap.set("n", "<leader>op", vim.cmd.ObsidianOpen);
 vim.keymap.set("n", "<leader>of", vim.cmd.ObsidianFollowLink);
+vim.keymap.set("n", "<leader>on", vim.cmd.ObsidianNew);
+vim.keymap.set("n", "<leader>ot", vim.cmd.ObsidianToday);
