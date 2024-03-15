@@ -29,6 +29,9 @@ vim.g.ale_linters = {
     cpp = { 'clangd' }
 }
 vim.g.ale_cpp_clangd_executable = vim.fn.getcwd() .. "/.clangd-wrapper"
+vim.g.ale_fixers = {
+  'clang-format'
+}
 
 -- Key mappings
 vim.api.nvim_set_keymap('n', '<leader>ad', ':ALEDetail<CR>', { noremap = true, silent = true })
