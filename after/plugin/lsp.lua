@@ -40,3 +40,10 @@ vim.api.nvim_set_keymap('n', '<leader>ag', ':ALEGoToDefinition<CR>', { noremap =
 vim.api.nvim_set_keymap('n', '<leader>ap', ':ALEPrevious<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>an', ':ALENext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>as', ':ALESymbolSearch<CR>', { noremap = true, silent = true })
+
+-- vim.g.ale_completion_enabled = 1
+
+vim.g['deoplete#enable_at_startup'] = 1
+vim.fn['deoplete#custom#option']('sources', {
+  _ = {'ale'}
+})

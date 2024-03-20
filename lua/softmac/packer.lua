@@ -41,6 +41,7 @@ return require('packer').startup(function(use)
     }
   }
   use 'dense-analysis/ale'
+  use {'Shougo/deoplete.nvim', run = ':UpdateRemotePlugins'}
   use {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
