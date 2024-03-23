@@ -20,3 +20,14 @@ require('lspconfig').clangd.setup({
     '--offset-encoding=utf-16'
   },
 })
+
+require'lspconfig'.lua_ls.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+    },
+  },
+}
