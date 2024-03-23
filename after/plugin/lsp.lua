@@ -14,6 +14,13 @@ require('mason-lspconfig').setup({
   },
 })
 
+require('lspconfig').clangd.setup({
+  cmd = {
+    'clangd',
+    '--offset-encoding=utf-16'
+  },
+})
+
 require'lspconfig'.lua_ls.setup {
   settings = {
     Lua = {
@@ -24,14 +31,18 @@ require'lspconfig'.lua_ls.setup {
     },
   },
 }
+local function get_clangd_cmd()
+    local clangd_wrapper_path = vim.fn.getcwd() .. '/.clangd-wrapper'
+    if vim.fn.filereadable(clangd_wrapper_path) == 1 then
+        return {clangd_wrapper_path}
+    else
+        -- Fallback clangd command if .clangd-wrapper is not found
+        return {'clangd'}
+    end
+end
+
 require'lspconfig'.clangd.setup {
-    cmd = { "/bin/bash", "-c", [[
-    docker exec \
-        --interactive \
-        --workdir /home/jerry/codespace/sdc/ros \
-        sdc-bionic \
-        clangd-12 $@
-    ]] },
+    cmd = get_clangd_cmd(),
     on_attach = function(client, bufnr)
         -- Optional: add here your preferred key mappings, completion setup, etc.
     end,
