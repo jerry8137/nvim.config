@@ -14,13 +14,6 @@ require('mason-lspconfig').setup({
   },
 })
 
-require('lspconfig').clangd.setup({
-  cmd = {
-    'clangd',
-    '--offset-encoding=utf-16'
-  },
-})
-
 require'lspconfig'.lua_ls.setup {
   settings = {
     Lua = {
@@ -30,4 +23,16 @@ require'lspconfig'.lua_ls.setup {
       },
     },
   },
+}
+require'lspconfig'.clangd.setup {
+    cmd = { "/bin/bash", "-c", [[
+    docker exec \
+        --interactive \
+        --workdir /home/jerry/codespace/sdc/ros \
+        sdc-bionic \
+        clangd-12 $@
+    ]] },
+    on_attach = function(client, bufnr)
+        -- Optional: add here your preferred key mappings, completion setup, etc.
+    end,
 }
