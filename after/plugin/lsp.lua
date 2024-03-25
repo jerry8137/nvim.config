@@ -14,6 +14,23 @@ require('mason-lspconfig').setup({
   },
 })
 
+-- require('lspconfig').clangd.setup({
+--   cmd = {
+--     'clangd',
+--     '--offset-encoding=utf-16'
+--   },
+-- })
+
+require'lspconfig'.lua_ls.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+    },
+  },
+}
 local function get_clangd_cmd()
     local clangd_wrapper_path = vim.fn.getcwd() .. '/.clangd-wrapper'
     if vim.fn.filereadable(clangd_wrapper_path) == 1 then
@@ -30,5 +47,3 @@ require'lspconfig'.clangd.setup {
         -- Optional: add here your preferred key mappings, completion setup, etc.
     end,
 }
-
-
