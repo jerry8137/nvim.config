@@ -9,15 +9,16 @@ return require('packer').startup(function(use)
     -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use({
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-      vim.cmd('colorscheme tokyonight-night')
-    end
-  })
+  -- use({
+  --   'folke/tokyonight.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     vim.cmd('colorscheme tokyonight-night')
+  --   end
+  -- })
+  use('navarasu/onedark.nvim')
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
@@ -45,16 +46,6 @@ return require('packer').startup(function(use)
     config = function() require("nvim-autopairs").setup {} end
   }
   use 'nvim-tree/nvim-web-devicons'
-  -- nvim tree
-  -- use {
-  --   'nvim-tree/nvim-tree.lua',
-  --   requires = {
-  --     'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  --   },
-  --   tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  -- }
-  -- tab
-  -- use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
   -- status bar
   use {
     'nvim-lualine/lualine.nvim',
