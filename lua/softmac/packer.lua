@@ -9,17 +9,18 @@ return require('packer').startup(function(use)
     -- or                            , branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
-  -- use({
-  --   'folke/tokyonight.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     vim.cmd('colorscheme tokyonight-night')
-  --   end
-  -- })
   use('navarasu/onedark.nvim')
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+  use({
+    'navarasu/onedark.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      vim.cmd('colorscheme onedark')
+    end
+  })
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
