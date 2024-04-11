@@ -68,7 +68,15 @@ return require('packer').startup(function(use)
     -- Required.
     "nvim-lua/plenary.nvim",
 
-    -- see below for full list of optional dependencies 👇
-  },
-})
+      -- see below for full list of optional dependencies 👇
+    },
+  })
+  use({
+    "NStefan002/speedtyper.nvim",
+    config = function()
+      require("speedtyper").setup({
+        -- your config
+      })
+    end,
+  })
 end)
