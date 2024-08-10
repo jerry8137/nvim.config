@@ -6,6 +6,7 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
   'navarasu/onedark.nvim',
+  'folke/tokyonight.nvim',
   'nvim-treesitter/nvim-treesitter',
   'nvim-treesitter/playground',
   'theprimeagen/harpoon',
