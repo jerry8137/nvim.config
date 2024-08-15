@@ -40,3 +40,11 @@ require'lspconfig'.clangd.setup {
         -- Optional: add here your preferred key mappings, completion setup, etc.
     end,
 }
+require'lspconfig'.ruff.setup {
+  settings = {
+    args = {
+      -- Add your ruff args here
+      "--line-length=79",
+    },
+  }
+}
