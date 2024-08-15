@@ -4,6 +4,6 @@ vim.keymap.set("n", "<leader>gl", ":Git log --oneline --decorate --graph --all<C
 
 vim.keymap.set("n", "<leader>gc", ":0Gclog<CR>")
 
-vim.keymap.set("n", "<leader>gb", ":Git branch -v<CR>")
+vim.keymap.set("n", "<leader>gb", ":Git branch<CR>")
 
-vim.keymap.set("n", "<leader>gr", ":Git branch -rv<CR>")
+vim.keymap.set("n", "<leader>gr", ":Git branch -r<CR>")
