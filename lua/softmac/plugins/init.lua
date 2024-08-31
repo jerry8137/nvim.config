@@ -46,6 +46,25 @@ return {
   {
     "frankroeder/parrot.nvim",
     dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
-    opts = {}
+    opts = {
+      providers = {
+        anthropic = {
+          api_key = os.getenv("ANTHROPIC_API_KEY"),
+          endpoint = "https://api.anthropic.com/v1/messages",
+          topic_prompt = "You only respond with 3 to 4 words to summarize the past conversation.",
+          -- usually a cheap and fast model to generate the chat topic based on
+          -- the whole chat history
+          topic = {
+            model = "claude-3-haiku-20240307",
+            params = { max_tokens = 32 },
+          },
+          -- default parameters for the actual model
+          params = {
+            chat = { max_tokens = 4096 },
+            command = { max_tokens = 4096 },
+          },
+        }
+      }
+    }
   }
 }
