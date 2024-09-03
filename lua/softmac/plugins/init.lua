@@ -41,31 +41,20 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
   {
-    "github/copilot.vim"
-  },
-  {
-    "frankroeder/parrot.nvim",
-    dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim" },
+    'huggingface/llm.nvim',
     opts = {
-      providers = {
-        anthropic = {
-          api_key = os.getenv("ANTHROPIC_API_KEY"),
-          endpoint = "https://api.anthropic.com/v1/messages",
-          topic_prompt = "You only respond with 3 to 4 words to summarize the past conversation.",
-          -- usually a cheap and fast model to generate the chat topic based on
-          -- the whole chat history
-          topic = {
-            model = "claude-3-haiku-20240307",
-            params = { max_tokens = 32 },
-          },
-          -- default parameters for the actual model
-          params = {
-            chat = { max_tokens = 4096 },
-            command = { max_tokens = 4096 },
-          },
-        },
-        ollama = {},
-      }
+      backend = "ollama",
+      model = "codellama:latest",
+      url = "http://localhost:11434/api/generate",
+      request_body = {
+        options = {
+          temperature = 0.2,
+          top_p = 0.95,
+        }
+      },
+      lsp = {
+        bin_path = vim.api.nvim_call_function("stdpath", { "data" }) .. "/mason/bin/llm-ls",
+      },
     }
   }
 }
