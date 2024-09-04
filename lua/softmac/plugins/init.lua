@@ -44,4 +44,10 @@ return {
   {
     "github/copilot.vim"
   },
+  {
+    "David-Kunz/gen.nvim",
+    opts = {
+      model = "llama3",        -- The default model to use.
+    }
+  },
 }
