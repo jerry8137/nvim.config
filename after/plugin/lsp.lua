@@ -66,7 +66,7 @@ require 'lspconfig'.pylsp.setup {
         -- linter options
         pylint = { enabled = true, executable = "pylint",
           -- Pylint line length setting
-          args = { '--max-line-length=100' } },
+          args = { '--max-line-length=200' } },
         pyflakes = { enabled = false },
         pycodestyle = { enabled = false },
         -- type checker
