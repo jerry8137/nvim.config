@@ -43,8 +43,11 @@ require 'lspconfig'.clangd.setup {
 
 local function get_ruff_cmd()
   local ruff_wrapper_path = vim.fn.getcwd() .. '/.ruff-wrapper'
+  local pylsp_wrapper_path = vim.fn.getcwd() .. '/.pylsp-wrapper'
   if vim.fn.filereadable(ruff_wrapper_path) == 1 then
     return { ruff_wrapper_path }
+  elseif vim.fn.filereadable(pylsp_wrapper_path) == 1 then
+    return { pylsp_wrapper_path }
   else
     -- Fallback clangd command if .clangd-wrapper is not found
     return { 'pylsp' }
