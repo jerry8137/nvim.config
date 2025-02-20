@@ -42,10 +42,6 @@ return {
   'terrortylor/nvim-comment',
   'lukas-reineke/indent-blankline.nvim',
   {
-    'epwalsh/obsidian.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
-  {
     "David-Kunz/gen.nvim",
     opts = {
       model = "llama3.1", -- The default model to use.
