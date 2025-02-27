@@ -21,3 +21,9 @@ require 'nvim-treesitter.configs'.setup {
     additional_vim_regex_highlighting = false,
   },
 }
+vim.treesitter.language.register('xml', {'launch'})  -- the someft filetype will use the python parser and queries.
+vim.filetype.add({
+  extension = {
+    launch = "xml",
+  },
+})
