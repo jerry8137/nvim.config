@@ -1,4 +1,4 @@
-local custom_gruvbox = require'lualine.themes.dracula'
+local custom_gruvbox = require'lualine.themes.nightfly'
 
 -- Change the background of lualine_c section for normal mode
 custom_gruvbox.normal.c.bg = '#112233'
