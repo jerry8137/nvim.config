@@ -90,13 +90,21 @@ return {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html", -- if you have `nvim-treesitter` installed
     dependencies = {
-        "nvim-telescope/telescope.nvim",
-        -- "ibhagwan/fzf-lua",
-        "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
+      "nvim-telescope/telescope.nvim",
+      -- "ibhagwan/fzf-lua",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
     },
     opts = {
-      lang="python3";
+      lang = "python3",
     },
-  }
+  },
+  {
+    'chomosuke/typst-preview.nvim',
+    lazy = false, -- or ft = 'typst'
+    version = '1.*',
+    opts = {
+      dependencies_bin = { ['tinymist'] = 'tinymist' }
+    }, -- lazy.nvim will implicitly calls `setup {}`
+  },
 }
