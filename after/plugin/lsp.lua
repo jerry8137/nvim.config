@@ -7,12 +7,6 @@ lsp_zero.on_attach(function(client, bufnr)
 end)
 
 require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = {tinymist},
-  handlers = {
-    lsp_zero.default_setup,
-  },
-})
 
 require 'lspconfig'.lua_ls.setup {
   settings = {
