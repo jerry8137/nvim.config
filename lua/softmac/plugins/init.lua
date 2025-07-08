@@ -107,4 +107,10 @@ return {
       dependencies_bin = { ['tinymist'] = 'tinymist' }
     }, -- lazy.nvim will implicitly calls `setup {}`
   },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
 }
