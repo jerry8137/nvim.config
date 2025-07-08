@@ -6,8 +6,8 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
   'navarasu/onedark.nvim',
-  { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  { "bluz71/vim-nightfly-colors",      name = "nightfly",  lazy = false, priority = 1000 },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
   'nvim-treesitter/playground',
   {
     "ThePrimeagen/harpoon",
