@@ -116,4 +116,7 @@ return {
     end,
     ft = { "markdown" },
   },
+  {
+    "github/copilot.vim",
+  },
 }
