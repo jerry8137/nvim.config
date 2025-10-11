@@ -8,16 +8,15 @@ end)
 
 require('mason').setup({})
 
-require 'lspconfig'.lua_ls.setup {
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim' },
-      },
-    },
-  },
-}
+        globals = { 'vim' }
+      }
+    }
+  }
+})
 local function get_clangd_cmd()
   local clangd_wrapper_path = vim.fn.getcwd() .. '/.clangd-wrapper'
   if vim.fn.filereadable(clangd_wrapper_path) == 1 then
@@ -28,12 +27,11 @@ local function get_clangd_cmd()
   end
 end
 
-require 'lspconfig'.clangd.setup {
+vim.lsp.config('clangd', {
   cmd = get_clangd_cmd(),
-  on_attach = function(client, bufnr)
-    -- Optional: add here your preferred key mappings, completion setup, etc.
-  end,
-}
+  filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+  root_dir = require('lspconfig.util').root_pattern('compile_commands.json', 'compile_flags.txt', '.git'),
+})
 
 local function get_ruff_cmd()
   local ruff_wrapper_path = vim.fn.getcwd() .. '/.ruff-wrapper'
@@ -47,8 +45,10 @@ local function get_ruff_cmd()
     return { 'pylsp' }
   end
 end
-require 'lspconfig'.pylsp.setup {
+vim.lsp.config('pylsp', {
   cmd = get_ruff_cmd(),
+  filetypes = { 'python' },
+  root_dir = require('lspconfig.util').root_pattern('.git', 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt'),
   settings = {
     pylsp = {
       plugins = {
@@ -76,4 +76,4 @@ require 'lspconfig'.pylsp.setup {
       }
     }
   }
-}
+})
