@@ -30,8 +30,8 @@ end
 vim.lsp.config('clangd', {
   cmd = get_clangd_cmd(),
   filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
-  root_dir = require('lspconfig.util').root_pattern('compile_commands.json', 'compile_flags.txt', '.git'),
 })
+vim.lsp.enable({"clangd"})
 
 local function get_ruff_cmd()
   local ruff_wrapper_path = vim.fn.getcwd() .. '/.ruff-wrapper'
@@ -48,7 +48,6 @@ end
 vim.lsp.config('pylsp', {
   cmd = get_ruff_cmd(),
   filetypes = { 'python' },
-  root_dir = require('lspconfig.util').root_pattern('.git', 'pyproject.toml', 'setup.py', 'setup.cfg', 'requirements.txt'),
   settings = {
     pylsp = {
       plugins = {
@@ -77,3 +76,4 @@ vim.lsp.config('pylsp', {
     }
   }
 })
+vim.lsp.enable({"pylsp"})
